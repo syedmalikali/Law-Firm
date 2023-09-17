@@ -56,7 +56,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-09-14 15:39:12.297201",
+ "modified": "2023-09-14 16:47:06.412655",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Law Firm",
@@ -78,7 +78,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Law Firm Administrator"
+  }
+ ],
  "sequence_id": 39.0,
  "shortcuts": [
   {

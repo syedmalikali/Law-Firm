@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-17 14:31:42.570050",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "matter_creation_master_section",
+  "title",
+  "client_details_section",
+  "branch",
+  "client",
+  "column_break_sirw",
+  "client_name",
+  "vat_number",
+  "lawyer_details_section",
+  "lawyer",
+  "lawyer_name",
+  "column_break_bzrb",
+  "fees_structure",
+  "section_break_zotb",
+  "column_break_iuok",
+  "matter_code",
+  "matter_name",
+  "column_break_qqka",
+  "date_opened",
+  "matter_description",
+  "amended_from",
+  "section_break_qavv",
+  "payment_by",
+  "column_break_vhnp",
+  "paid_by",
+  "paying_client_vat_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Matter",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.customer_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "matter_code",
+   "fieldtype": "Link",
+   "label": "Matter Code",
+   "options": "Matter Master"
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "matter_description",
+   "fieldtype": "Data",
+   "label": "Matter Description"
+  },
+  {
+   "fieldname": "date_opened",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Opened",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lawyer",
+   "fieldtype": "Link",
+   "label": "Lawyer",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "lawyer.employee_name",
+   "fieldname": "lawyer_name",
+   "fieldtype": "Data",
+   "label": "Lawyer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iuok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qqka",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "client.tax_id",
+   "fieldname": "vat_number",
+   "fieldtype": "Data",
+   "label": "VAT Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sirw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zotb",
+   "fieldtype": "Section Break",
+   "label": "Matter Details"
+  },
+  {
+   "fieldname": "client_details_section",
+   "fieldtype": "Section Break",
+   "label": "Client Details"
+  },
+  {
+   "fieldname": "lawyer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Lawyer Details"
+  },
+  {
+   "fieldname": "column_break_bzrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "matter_code.matter_description",
+   "fieldname": "matter_name",
+   "fieldtype": "Data",
+   "label": "Matter Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fees_structure",
+   "fieldtype": "Small Text",
+   "label": "Fees Structure"
+  },
+  {
+   "fieldname": "matter_creation_master_section",
+   "fieldtype": "Section Break",
+   "label": "Matter Creation Master"
+  },
+  {
+   "fieldname": "section_break_qavv",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "payment_by",
+   "fieldtype": "Select",
+   "label": "Payment By",
+   "options": "Self\nOther"
+  },
+  {
+   "fieldname": "column_break_vhnp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "paid_by",
+   "fieldtype": "Link",
+   "label": "Paid By",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "paid_by.tax_id",
+   "fieldname": "paying_client_vat_number",
+   "fieldtype": "Data",
+   "label": "Paying Client VAT Number"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-09-17 15:30:49.563552",
+ "modified_by": "Administrator",
+ "module": "Law Firm",
+ "name": "Matter",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
