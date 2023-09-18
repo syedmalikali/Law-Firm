@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:matter_code",
  "creation": "2023-09-17 14:26:09.348985",
@@ -32,7 +33,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-17 14:27:34.509377",
+ "modified": "2023-09-17 16:45:33.165557",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Matter Master",
