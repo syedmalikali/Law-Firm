@@ -40,7 +40,8 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "Title",
+   "reqd": 1
   },
   {
    "fieldname": "client",
@@ -192,7 +193,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-18 13:47:59.451651",
+ "modified": "2024-04-17 11:42:09.631517",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Matter",
@@ -200,6 +201,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -209,9 +212,12 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -221,6 +227,7 @@
    "report": 1,
    "role": "Law Firm Administrator",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
