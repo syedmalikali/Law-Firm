@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-19 13:18:07.045948",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "name1",
+  "file_number",
+  "client",
+  "matter",
+  "purticulars",
+  "time",
+  "rate",
+  "amount",
+  "column_break_hjcr",
+  "parent1",
+  "parent_item_ref"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Employee",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "file_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "File Number",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "file_number.customer",
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "file_number.project_name",
+   "fieldname": "matter",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Matter",
+   "read_only": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "purticulars",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Purticulars"
+  },
+  {
+   "columns": 1,
+   "fieldname": "time",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Time",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hjcr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parent1",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Parent"
+  },
+  {
+   "fieldname": "parent_item_ref",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Parent Item Ref"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-10-31 10:08:21.461873",
+ "modified_by": "Administrator",
+ "module": "Law Firm",
+ "name": "Sales Invoice LF Timesheet",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
