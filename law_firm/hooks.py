@@ -226,6 +226,9 @@ fixtures = [
         "filters": [
             ["module", "in", ["Law Firm"]]
         ]
+    },
+    {
+        "doctype": "Translation"
     }
 ]
 
