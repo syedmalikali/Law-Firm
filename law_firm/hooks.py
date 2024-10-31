@@ -229,6 +229,12 @@ fixtures = [
     },
     {
         "doctype": "Translation"
+    },
+    {
+        "doctype": "Workspace",
+        "filters": [
+            ["module", "in", ["Law Firm"]]
+        ]
     }
 ]
 

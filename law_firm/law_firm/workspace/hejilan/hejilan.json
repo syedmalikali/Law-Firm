@@ -1,0 +1,165 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"ysEPiyKOZC\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"KHh-tRdjSf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GkSb1Zi-Qd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"clbYZLDXEF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"wF34u0rFlH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ENUmDTkh6Z\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Acess</b></span>\",\"col\":12}},{\"id\":\"-pvq3g6aT7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lawyers\",\"col\":3}},{\"id\":\"77kq7RGkqz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clients\",\"col\":3}},{\"id\":\"GmhcDxv9yE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"R-2wmerGTK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"id\":\"a3zUzTdbiC\",\"type\":\"card\",\"data\":{\"card_name\":\"Create / Edit / Delete\",\"col\":4}},{\"id\":\"fw6c6kq1tH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}}]",
+ "creation": "2023-09-14 16:51:47.474540",
+ "custom_blocks": [
+  {
+   "custom_block_name": "LH",
+   "label": "LH"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "arrow-right",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Hejilan",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Create / Edit / Delete",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clients",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lawyers",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lawyer Informations",
+   "link_count": 0,
+   "link_to": "Employee Information",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Transactions",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transactions",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Matter",
+   "link_count": 0,
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timesheet Entry",
+   "link_count": 0,
+   "link_to": "LF Timesheet",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Create Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Clients Credit Balance",
+   "link_count": 0,
+   "link_to": "Customer Credit Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lawyer Informations",
+   "link_count": 0,
+   "link_to": "Employee Information",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-10-31 11:30:51.675295",
+ "modified_by": "Administrator",
+ "module": "Law Firm",
+ "name": "Hejilan",
+ "number_cards": [
+  {
+   "label": "Active Clients",
+   "number_card_name": "Active Customers"
+  },
+  {
+   "label": "Active Lawyers",
+   "number_card_name": "Active Lawyers"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Law Firm Administrator"
+  }
+ ],
+ "sequence_id": 40.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Lawyers",
+   "link_to": "Employee",
+   "stats_filter": "{\"department\":[\"=\",\"Lawyer - LFSH\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Clients",
+   "link_to": "Customer",
+   "stats_filter": "{\"disabled\":[\"=\",0]}",
+   "type": "DocType"
+  }
+ ],
+ "title": "Hejilan"
+}
