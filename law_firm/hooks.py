@@ -218,13 +218,13 @@ fixtures = [
     {
         "doctype": "Client Script",
         "filters": [
-            ["module", "in", ["law_firm"]]
+            ["module", "in", ["Law Firm"]]
         ]
     },
     {
         "doctype": "Server Script",
         "filters": [
-            ["module", "in", ["law_firm"]]
+            ["module", "in", ["Law Firm"]]
         ]
     }
 ]
