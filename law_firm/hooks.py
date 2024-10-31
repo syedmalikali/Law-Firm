@@ -214,3 +214,18 @@ app_license = "MIT"
 # auth_hooks = [
 #	"law_firm.auth.validate"
 # ]
+fixtures = [
+    {
+        "doctype": "Client Script",
+        "filters": [
+            ["module", "in", ["law_firm"]]
+        ]
+    },
+    {
+        "doctype": "Server Script",
+        "filters": [
+            ["module", "in", ["law_firm"]]
+        ]
+    }
+]
+
