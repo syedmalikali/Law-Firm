@@ -59,10 +59,10 @@
   "docstatus": 0,
   "doctype": "Translation",
   "language": "en",
-  "modified": "2024-08-19 09:54:39.193689",
+  "modified": "2024-11-03 09:55:44.964151",
   "name": "qeen2b50s9",
   "source_text": "Project Type",
-  "translated_text": "Matter Type"
+  "translated_text": "Matter Code"
  },
  {
   "context": null,
@@ -310,5 +310,18 @@
   "name": "oj0nnautmr",
   "source_text": "Sales Invoice",
   "translated_text": "Invoice"
+ },
+ {
+  "context": null,
+  "contributed": 0,
+  "contribution_docname": null,
+  "contribution_status": "",
+  "docstatus": 0,
+  "doctype": "Translation",
+  "language": "en",
+  "modified": "2024-11-03 09:54:29.605252",
+  "name": "ebboih788g",
+  "source_text": "Matter Type",
+  "translated_text": "Matter Code"
  }
 ]

@@ -74,7 +74,7 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
-   "creation": "2024-09-30 09:04:46.092624",
+   "creation": "2024-11-03 09:58:40.109725",
    "default_value": null,
    "doc_type": "Matter Lawyer List",
    "docstatus": 0,
@@ -82,7 +82,7 @@
    "field_name": "lawyer",
    "idx": 0,
    "is_system_generated": 0,
-   "modified": "2024-10-29 10:18:58.803298",
+   "modified": "2024-11-03 09:58:40.109725",
    "modified_by": "Administrator",
    "module": null,
    "name": "Matter Lawyer List-lawyer-link_filters",
@@ -90,7 +90,7 @@
    "property": "link_filters",
    "property_type": "JSON",
    "row_name": null,
-   "value": "[[\"Employee\",\"department\",\"=\",\"Lawyers - LFSH\"]]"
+   "value": "[[\"Employee\",\"department\",\"=\",\"Law - LFSH\"]]"
   },
   {
    "_assign": null,
