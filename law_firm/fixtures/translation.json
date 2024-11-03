@@ -297,5 +297,18 @@
   "name": "vf1db579ki",
   "source_text": "Customer",
   "translated_text": "Client"
+ },
+ {
+  "context": null,
+  "contributed": 0,
+  "contribution_docname": null,
+  "contribution_status": "",
+  "docstatus": 0,
+  "doctype": "Translation",
+  "language": "en",
+  "modified": "2024-11-02 14:06:03.893367",
+  "name": "oj0nnautmr",
+  "source_text": "Sales Invoice",
+  "translated_text": "Invoice"
  }
 ]
