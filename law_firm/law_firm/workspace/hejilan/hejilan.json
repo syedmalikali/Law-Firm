@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"ysEPiyKOZC\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"KHh-tRdjSf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GkSb1Zi-Qd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"clbYZLDXEF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"wF34u0rFlH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ENUmDTkh6Z\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Acess</b></span>\",\"col\":12}},{\"id\":\"-pvq3g6aT7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lawyers\",\"col\":3}},{\"id\":\"77kq7RGkqz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clients\",\"col\":3}},{\"id\":\"GmhcDxv9yE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"R-2wmerGTK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"id\":\"a3zUzTdbiC\",\"type\":\"card\",\"data\":{\"card_name\":\"Create / Edit / Delete\",\"col\":4}},{\"id\":\"fw6c6kq1tH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}}]",
- "creation": "2023-09-14 16:51:47.474540",
+ "creation": "2024-12-31 14:31:10.023672",
  "custom_blocks": [
   {
    "custom_block_name": "LH",
@@ -88,7 +88,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Create Invoice",
+   "label": "Invoice",
    "link_count": 0,
    "link_to": "Sales Invoice",
    "link_type": "DocType",
@@ -116,7 +116,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-10-31 11:30:51.675295",
+ "modified": "2025-01-02 15:40:21.056855",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Hejilan",
