@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"ysEPiyKOZC\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"KHh-tRdjSf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GkSb1Zi-Qd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"clbYZLDXEF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"wF34u0rFlH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ENUmDTkh6Z\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Acess</b></span>\",\"col\":12}},{\"id\":\"-pvq3g6aT7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lawyers\",\"col\":3}},{\"id\":\"77kq7RGkqz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clients\",\"col\":3}},{\"id\":\"GmhcDxv9yE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"R-2wmerGTK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"id\":\"a3zUzTdbiC\",\"type\":\"card\",\"data\":{\"card_name\":\"Create / Edit / Delete\",\"col\":4}},{\"id\":\"fw6c6kq1tH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}}]",
- "creation": "2025-01-02 16:50:42.770331",
+ "content": "[{\"id\":\"ysEPiyKOZC\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"KHh-tRdjSf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GkSb1Zi-Qd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"clbYZLDXEF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"wF34u0rFlH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ENUmDTkh6Z\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Acess</b></span>\",\"col\":12}},{\"id\":\"-pvq3g6aT7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lawyers\",\"col\":3}},{\"id\":\"77kq7RGkqz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clients\",\"col\":3}},{\"id\":\"GmhcDxv9yE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"R-2wmerGTK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"id\":\"a3zUzTdbiC\",\"type\":\"card\",\"data\":{\"card_name\":\"Create / Edit / Delete\",\"col\":4}},{\"id\":\"fw6c6kq1tH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"d8hT6s6b1F\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2025-01-12 16:52:48.101698",
  "custom_blocks": [
   {
    "custom_block_name": "LH",
@@ -19,20 +19,9 @@
  "links": [
   {
    "hidden": 0,
-   "is_query_report": 1,
-   "label": "Lawyer Informations",
-   "link_count": 0,
-   "link_to": "Employee Information",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
    "is_query_report": 0,
    "label": "Create / Edit / Delete",
-   "link_count": 3,
-   "link_type": "DocType",
+   "link_count": 2,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -58,11 +47,11 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
-   "label": "Address",
+   "is_query_report": 1,
+   "label": "Lawyer Informations",
    "link_count": 0,
-   "link_to": "Address",
-   "link_type": "DocType",
+   "link_to": "Employee Information",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   },
@@ -99,7 +88,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Invoice",
+   "label": "Create Invoice",
    "link_count": 0,
    "link_to": "Sales Invoice",
    "link_type": "DocType",
@@ -125,9 +114,28 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Timesheet Report",
+   "link_count": 0,
+   "link_to": "Timesheets Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-01-07 18:22:35.528839",
+ "modified": "2025-01-12 19:35:40.227984",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Hejilan",
