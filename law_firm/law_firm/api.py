@@ -24,4 +24,4 @@ def get_unique_custom_matter_code(base_series):
         next_number = 1  # If no previous code exists, start from 1
 
     # Generate the unique code in the desired format
-    return f"{base_series}{str(next_number).zfill(3)}"
+    return f"{base_series}{str(next_number).zfill(4)}"
