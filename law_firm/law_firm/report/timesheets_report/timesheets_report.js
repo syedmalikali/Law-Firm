@@ -58,6 +58,13 @@ frappe.query_reports["Timesheets Report"] = {
             fieldtype: "Link",
             options: "Project",
             reqd: 0
+        },
+        {
+            fieldname: "lawyer",
+            label: __("Lawyer"),
+            fieldtype: "Link",
+            options: "Employee",
+            reqd: 0
         }
     ]
 };
