@@ -64,3 +64,36 @@ def get_lf_timesheet_items(filters):
     frappe.errprint(f"Timesheet Items: {timesheet_items}")
     return timesheet_items
 
+
+# Used in fetching expense items in Invoice
+@frappe.whitelist()
+def get_lf_expense_items(filters):
+    filters = frappe.parse_json(filters)
+    frappe.errprint(f"Filters received: {filters}")
+
+    # Extracting and validating filters
+    date_range = filters.get("date_range", [nowdate(), nowdate()])
+    file_number = filters.get("project")
+    frappe.errprint(f"Date Range: {date_range}, File Number: {file_number}")
+
+    # Fetching data
+    expense_items = frappe.get_all(
+        "LF Expense Item",
+        filters={
+            "date": ["between", date_range],
+            "file_number": file_number,
+            "is_invoiced": "No",
+        },
+        fields=[
+            "name",
+            "date",
+            "file_number",
+            "client",
+            "matter",
+            "purticulars",
+            "amount",
+            "name1",
+            "parent"
+        ]
+    )
+    return expense_items
