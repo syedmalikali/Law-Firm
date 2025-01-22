@@ -20,7 +20,8 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date"
+   "label": "Date",
+   "options": "Today"
   },
   {
    "fieldname": "lawyer",
@@ -69,7 +70,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-20 01:38:17.341784",
+ "modified": "2025-01-21 14:45:10.486897",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "LF Expense",

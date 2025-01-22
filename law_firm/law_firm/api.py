@@ -61,7 +61,6 @@ def get_lf_timesheet_items(filters):
             "parent"
         ]
     )
-    frappe.errprint(f"Timesheet Items: {timesheet_items}")
     return timesheet_items
 
 
@@ -83,6 +82,7 @@ def get_lf_expense_items(filters):
             "date": ["between", date_range],
             "file_number": file_number,
             "is_invoiced": "No",
+            "is_billable": 1,
         },
         fields=[
             "name",
@@ -91,6 +91,9 @@ def get_lf_expense_items(filters):
             "client",
             "matter",
             "purticulars",
+            "total",
+            "vat",
+            "is_billable",
             "amount",
             "name1",
             "parent"
