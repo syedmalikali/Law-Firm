@@ -1,0 +1,152 @@
+{
+ "charts": [
+  {
+   "chart_name": "Matter",
+   "label": "Matter"
+  }
+ ],
+ "content": "[{\"id\":\"lM3rRiYj5N\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"DtW2Y-93rB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"fLCHrcYV0G\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"pLdSNIN_-k\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Matter\",\"col\":12}},{\"id\":\"4fMdlL87eT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transactions</b></span>\",\"col\":12}},{\"id\":\"mkz4DnC0dB\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"-Kt7dMMBW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":4}},{\"id\":\"mzoaG9ljwW\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2025-01-22 14:36:48.072549",
+ "custom_blocks": [
+  {
+   "custom_block_name": "LH",
+   "label": "LH"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-monthly-rank",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Hejailan",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Matter",
+   "link_count": 0,
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timesheet",
+   "link_count": 0,
+   "link_to": "LF Timesheet",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Expense",
+   "link_count": 0,
+   "link_to": "LF Expense",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timesheet",
+   "link_count": 0,
+   "link_to": "Timesheets Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "LF Timesheet",
+   "type": "Link"
+  },
+  {
+   "description": "Create and Edit Master Records",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lawyer Information",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-01-22 14:51:40.354021",
+ "modified_by": "Administrator",
+ "module": "Law Firm",
+ "name": "Hejailan",
+ "number_cards": [
+  {
+   "label": "Active Lawyers",
+   "number_card_name": "Active Lawyers"
+  },
+  {
+   "label": "Active Clients",
+   "number_card_name": "Active Customers"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "sequence_id": 41.0,
+ "shortcuts": [],
+ "title": "Hejailan"
+}
