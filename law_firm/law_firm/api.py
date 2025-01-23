@@ -59,7 +59,8 @@ def get_lf_timesheet_items(filters):
             "amount",
             "name1",
             "parent"
-        ]
+        ],
+        order_by="date ASC" 
     )
     return timesheet_items
 
@@ -97,7 +98,8 @@ def get_lf_expense_items(filters):
             "amount",
             "name1",
             "parent"
-        ]
+        ],
+        order_by="date ASC" 
     )
     return expense_items
 
