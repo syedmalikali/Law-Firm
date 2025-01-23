@@ -100,3 +100,25 @@ def get_lf_expense_items(filters):
         ]
     )
     return expense_items
+
+@frappe.whitelist()
+def get_unique_custom_client_code(base_series):
+    # Fetch the last custom client code in the series
+    last_code = frappe.db.sql("""
+        SELECT CAST(SUBSTRING(custom_client_code, %s) AS UNSIGNED) AS last_number
+        FROM `tabCustomer`
+        WHERE custom_client_code LIKE %s
+        ORDER BY last_number DESC
+        LIMIT 1
+    """, (len(base_series) + 1, base_series + "%"))
+
+    if last_code and last_code[0][0]:
+        # Extract the last number from the query result and increment it
+        last_number = last_code[0][0]
+        next_number = int(last_number) + 1
+    else:
+        # If no matching codes are found, start with 1
+        next_number = 1
+
+    # Generate the unique code in the desired format
+    return f"{base_series}{str(next_number).zfill(4)}"
