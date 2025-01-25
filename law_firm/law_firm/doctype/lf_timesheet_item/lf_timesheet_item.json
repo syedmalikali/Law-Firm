@@ -15,7 +15,8 @@
   "time",
   "rate",
   "amount",
-  "is_invoiced"
+  "is_invoiced",
+  "invoice_number"
  ],
  "fields": [
   {
@@ -100,12 +101,19 @@
    "label": "Is Invoiced?",
    "options": "No\nDraft\nYes\n0",
    "read_only": 1
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Link",
+   "label": "Invoice Number",
+   "options": "Sales Invoice",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-20 01:52:35.091228",
+ "modified": "2025-01-24 20:39:45.912291",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "LF Timesheet Item",

@@ -34,8 +34,7 @@
    "fieldtype": "Link",
    "label": "Name",
    "options": "Employee",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "columns": 1,
@@ -124,7 +123,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-21 14:55:43.193367",
+ "modified": "2025-01-25 01:28:20.367157",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Sales Invoice LF Expense",

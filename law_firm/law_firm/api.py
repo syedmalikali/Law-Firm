@@ -30,22 +30,34 @@ def get_unique_custom_matter_code(base_series):
 
 # Used in fetching timesheet items in Invoice
 @frappe.whitelist()
-def get_lf_timesheet_items(filters):
+def get_lf_timesheet_items(filters, docname):
+    # Parse filters to ensure it's a Python dictionary
     filters = frappe.parse_json(filters)
-    frappe.errprint(f"Filters received: {filters}")
 
-    # Extracting and validating filters
+    # Step 1: Fetch and reset fields for all LF Timesheet Items linked to the given docname
+    lf_timesheet_items = frappe.get_all(
+        'LF Timesheet Item',
+        filters={'invoice_number': docname},
+        fields=['name']
+    )
+    
+    for item in lf_timesheet_items:
+        frappe.db.set_value('LF Timesheet Item', item['name'], {
+            'is_invoiced': 'No',
+            'invoice_number': ''
+        })
+
+    # Step 2: Extract and validate filters
     date_range = filters.get("date_range", [nowdate(), nowdate()])
     file_number = filters.get("project")
-    frappe.errprint(f"Date Range: {date_range}, File Number: {file_number}")
 
-    # Fetching data
+    # Step 3: Fetch LF Timesheet Items based on the filters provided
     timesheet_items = frappe.get_all(
         "LF Timesheet Item",
         filters={
-            "date": ["between", date_range],
-            "file_number": file_number,
-            "is_invoiced": "No",
+            "date": ["between", date_range],  # Filter by date range
+            "file_number": file_number,       # Filter by file number
+            "is_invoiced": "No"               # Only fetch uninvoiced items
         },
         fields=[
             "name",
@@ -60,16 +72,29 @@ def get_lf_timesheet_items(filters):
             "name1",
             "parent"
         ],
-        order_by="date ASC" 
+        order_by="date ASC"  # Ensure results are ordered by date
     )
-    return timesheet_items
+
+    return timesheet_items  # Return the fetched items
 
 
 # Used in fetching expense items in Invoice
 @frappe.whitelist()
-def get_lf_expense_items(filters):
+def get_lf_expense_items(filters,docname):
     filters = frappe.parse_json(filters)
     frappe.errprint(f"Filters received: {filters}")
+    # Step 1: Fetch and reset fields for all LF Timesheet Items linked to the given docname
+    lf_expense_items = frappe.get_all(
+        'LF Expense Item',
+        filters={'invoice_number': docname},
+        fields=['name']
+    )
+    
+    for item in lf_expense_items:
+        frappe.db.set_value('LF Expense Item', item['name'], {
+            'is_invoiced': 'No',
+            'invoice_number': ''
+        })
 
     # Extracting and validating filters
     date_range = filters.get("date_range", [nowdate(), nowdate()])
