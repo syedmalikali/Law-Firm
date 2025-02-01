@@ -1,55 +1,28 @@
-// Copyright (c) 2025, Syed Malik Ali and contributors
-// For license information, please see license.txt
-
 frappe.query_reports["Timesheets Report"] = {
-    'filters': [
+    filters: [
         {
             fieldname: "from",
             label: __("From Date"),
             fieldtype: "Date",
-            default: frappe.datetime.month_start(),
-            reqd: 1
+            reqd: 1,
+            default: frappe.datetime.add_months(frappe.datetime.get_today(), -1)
         },
         {
             fieldname: "to",
             label: __("To Date"),
             fieldtype: "Date",
-            default: frappe.datetime.month_end(),
-            reqd: 1
+            reqd: 1,
+            default: frappe.datetime.get_today()
         },
         {
             fieldname: "customer",
-            label: __("Client"),
+            label: __("Customer"),
             fieldtype: "Link",
             options: "Customer",
-            reqd: 0,
-            on_change: function () {
-                const customer = frappe.query_report.get_filter_value("customer");
-                const from_date = frappe.query_report.get_filter_value("from");
-                const to_date = frappe.query_report.get_filter_value("to");
-
-                if (customer) {
-                    frappe.call({
-                        method: "frappe.client.get_list",
-                        args: {
-                            doctype: "Project",
-                            filters: {
-                                customer: customer,
-                                expected_start_date: ["between", [from_date, to_date]]
-                            },
-                            fields: ["name"]
-                        },
-                        callback: function (response) {
-                            const matters = response.message || [];
-                            const matter_options = matters.map(matter => ({ label: matter.name, value: matter.name }));
-                            
-                            frappe.query_report.set_filter_value("project", "");
-                            frappe.query_report.set_filter_options("project", matter_options);
-                        }
-                    });
-                } else {
-                    frappe.query_report.set_filter_options("project", []);
-                }
+            on_change: function() {
+                frappe.query_report.set_filter_value('project', '');
+                frappe.query_report.set_filter_value('employee', '');
+                frappe.query_report.refresh();
             }
         },
         {
@@ -57,14 +30,32 @@ frappe.query_reports["Timesheets Report"] = {
             label: __("Project"),
             fieldtype: "Link",
             options: "Project",
-            reqd: 0
+            get_query: function() {
+                const customer = frappe.query_report.get_filter_value('customer');
+                // Show all projects if no customer selected
+                return {
+                    filters: customer ? { 'customer': customer } : {}
+                };
+            },
+            on_change: function() {
+                frappe.query_report.set_filter_value('employee', '');
+                frappe.query_report.refresh();
+            }
         },
         {
-            fieldname: "lawyer",
-            label: __("Lawyer"),
+            fieldname: "employee",
+            label: __("Employee"),
             fieldtype: "Link",
             options: "Employee",
-            reqd: 0
+            
+        },
+        {
+            fieldname: "invoiced",
+            label: __("Invoiced?"),
+            fieldtype: "Select",
+            options: "\nYes\nNo\nDraft",
+            
         }
+
     ]
 };
