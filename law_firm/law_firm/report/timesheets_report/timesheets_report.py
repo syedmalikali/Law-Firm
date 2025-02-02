@@ -76,6 +76,7 @@ def get_data(filters):
         FROM `tabLF Timesheet Item` t
         LEFT JOIN `tabEmployee` e ON t.name1 = e.name
         {where_clause}
+        order by t.date,t.client,e.custom_short_name
     """
     
     frappe.errprint(query)  # Debugging: Output the query to check if it's correct

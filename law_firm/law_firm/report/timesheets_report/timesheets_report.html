@@ -63,6 +63,7 @@
     }
 </style>
 
+{% if (filters.summary == "All") { %}
 
 <div class="page">
     <table class="table">
@@ -100,7 +101,7 @@ Detailed Time Entries</h3>
             {% for(var i=0, l=data.length; i<l; i++) { %}
                 {% total_time += parseFloat(data[i]["time"]) || 0; %}
                 <tr>
-                    <td>{%= data[i]["date"] %}</td>
+                    <td>{%= frappe.datetime.str_to_user(data[i]["date"]) %}</td>
                     <td>{%= data[i]["purticulars"] %}</td>
                     <td style="text-align: center;">{%= (parseFloat(data[i]["time"]) || 0).toFixed(2) %}</td>
                     <td style="text-align: center;">{%= data[i]["lawyer_short_code"] %}</td>
@@ -115,11 +116,199 @@ Detailed Time Entries</h3>
             </tr>
         </tfoot>
     </table>
+
+{% var lawyer_totals = {}; %}
+
+<!-- Calculate total hours per lawyer -->
+{% for(var i=0, l=data.length; i<l; i++) { %}
+    {% var lawyer = data[i]["lawyer_short_code"] || "Unknown"; %}
+    {% lawyer_totals[lawyer] = (lawyer_totals[lawyer] || 0) + (parseFloat(data[i]["time"]) || 0); %}
+{% } %}
+
+<h3>Summary by Lawyer</h3>
+
+<table class="table">
+
+    <tbody>
+        {% for (var lawyer in lawyer_totals) { %}
+
+
+            <!-- Display Timesheet Details for Each Lawyer -->
+            <tr>
+                <td colspan="2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th >Client</th>
+                                <th>Date</th>
+                                <th>Rate</th>
+                                <th>File Number</th>
+                                <th>Matter Name</th>
+                                <th>Particulars</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for(var i=0, l=data.length; i<l; i++) { %}
+                                {% if(data[i]["lawyer_short_code"] == lawyer) { %}
+                                    <tr>
+                                        <td>{%= data[i]["client"] %}</td>
+                                        <td style="width:20mm;">{%= frappe.datetime.str_to_user(data[i]["date"]) %}</td>
+
+                                        <td style="text-align: center;">{%= (parseFloat(data[i]["time"]) || 0).toFixed(2) %}</td>
+                                        <td>{%= data[i]["file_number"] %}</td>
+                                        <td>{%= data[i]["matter"] %}</td>
+                                        <td>{%= data[i]["purticulars"] %}</td>
+                                    </tr>
+                                {% } %}
+                            {% } %}
+            <tr>
+                <td colspan="2" style="text-align: center;"><strong>{%= lawyer %}</strong></td>
+
+                <td style="text-align: center;"><strong>{%= lawyer_totals[lawyer].toFixed(2) %}</strong></td>
+                <td colspan="3" style="text-align: center;"><strong>Total Hours</strong></td>
+
+            </tr>                        </tbody>
+
+                    </table>
+                </td>
+            </tr>
+
+        {% } %}
+    </tbody>
+</table>
+
+</div>
+{% } %}
+
+{% if (filters.summary == "Lawyer Summary") { %}
+<div class="page">
+{% var lawyer_totals = {}; %}
+
+<!-- Calculate total hours per lawyer -->
+{% for(var i=0, l=data.length; i<l; i++) { %}
+    {% var lawyer = data[i]["lawyer_short_code"] || "Unknown"; %}
+    {% lawyer_totals[lawyer] = (lawyer_totals[lawyer] || 0) + (parseFloat(data[i]["time"]) || 0); %}
+{% } %}
+
+
+<h3>Summary by Lawyer</h3>
+
+<table class="table">
+
+    <tbody>
+        {% for (var lawyer in lawyer_totals) { %}
+
+
+            <!-- Display Timesheet Details for Each Lawyer -->
+            <tr>
+                <td colspan="2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th >Client</th>
+                                <th>Date</th>
+                                <th>Rate</th>
+                                <th>File Number</th>
+                                <th>Matter Name</th>
+                                <th>Particulars</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for(var i=0, l=data.length; i<l; i++) { %}
+                                {% if(data[i]["lawyer_short_code"] == lawyer) { %}
+                                    <tr>
+                                        <td>{%= data[i]["client"] %}</td>
+                                        <td style="width:20mm;">{%= frappe.datetime.str_to_user(data[i]["date"]) %}</td>
+
+                                        <td style="text-align: center;">{%= (parseFloat(data[i]["time"]) || 0).toFixed(2) %}</td>
+                                        <td>{%= data[i]["file_number"] %}</td>
+                                        <td>{%= data[i]["matter"] %}</td>
+                                        <td>{%= data[i]["purticulars"] %}</td>
+                                    </tr>
+                                {% } %}
+                            {% } %}
+            <tr>
+                <td colspan="2" style="text-align: center;"><strong>{%= lawyer %}</strong></td>
+
+                <td style="text-align: center;"><strong>{%= lawyer_totals[lawyer].toFixed(2) %}</strong></td>
+                <td colspan="3" style="text-align: center;"><strong>Total Hours</strong></td>
+
+            </tr>                        </tbody>
+
+                    </table>
+                </td>
+            </tr>
+
+        {% } %}
+    </tbody>
+</table>
+
 </div>
 
-<div class="footer">
-    Page <script>document.write(document.location.pathname);</script>
+{% } %}
+
+{% if (filters.summary == "Detail Only") { %}
+
+<div class="page">
+    <table class="table">
+        <thead >
+	    <tr>
+                <th colspan="4" style="border-left: white; border-right: white;background:white;"> 
+
+  
+    <div style="    background: white;text-align:center;margin-top: 10mm;">
+        <h3>Law Firm of Salah Al-Hejailan Since 1968 (LLC)<br>
+Detailed Time Entries</h3>
+        <p>Schedule of Services Rendered To:</p>
+      
+        <p><strong>Client/Matter:</strong></p>
+        <p><strong>For The Period:{%= frappe.datetime.str_to_user(filters.from) %}
+				{%= __("to") %}
+				{%= frappe.datetime.str_to_user(filters.to) %}</strong></p>
+        <p><strong>Lawyer:</strong>
+{%= filters.employee ? data[0]["emp_name"] : "" %}
+
+</p>
+        <p><strong>File No.:</strong> {%= filters.project ? data[0]["file_number"] : "" %}	</p>
+    </div>
+</th>
+            </tr>
+            <tr>
+                <th style="width: 20mm;">Date</th>
+                <th>Description</th>
+                <th style="width: 20mm; text-align: right;">Hours</th>
+                <th style="width: 40mm; text-align: center;">Lawyer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% var total_time = 0; %}
+            {% for(var i=0, l=data.length; i<l; i++) { %}
+                {% total_time += parseFloat(data[i]["time"]) || 0; %}
+                <tr>
+                    <td>{%= frappe.datetime.str_to_user(data[i]["date"]) %}</td>
+                    <td>{%= data[i]["purticulars"] %}</td>
+                    <td style="text-align: center;">{%= (parseFloat(data[i]["time"]) || 0).toFixed(2) %}</td>
+                    <td style="text-align: center;">{%= data[i]["lawyer_short_code"] %}</td>
+                </tr>
+            {% } %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Total Hours:</strong></td>
+                <td style="text-align: center;"><strong>{%= total_time.toFixed(2) %}</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
 </div>
+{% } %}
 
 <script>
     window.onload = function() {
