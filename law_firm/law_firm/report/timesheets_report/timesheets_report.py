@@ -61,6 +61,7 @@ def get_data(filters):
         SELECT
             t.amount,
             t.client,
+            c.customer_name,
             t.date,
             t.file_number,
             t.is_invoiced,
@@ -75,6 +76,7 @@ def get_data(filters):
             e.employee_name as emp_name
         FROM `tabLF Timesheet Item` t
         LEFT JOIN `tabEmployee` e ON t.name1 = e.name
+        LEFT JOIN `tabCustomer` c ON t.client = c.name
         {where_clause}
         order by t.date,t.client,e.custom_short_name
     """
