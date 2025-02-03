@@ -190,6 +190,89 @@ Detailed Time Entries</h3>
 </table>
 
 </div>
+
+<div class="page">
+{% var matter_totals = {}; %}
+{% var matter_clients = {}; %}
+{% var matter_names = {}; %}
+
+<!-- Calculate total hours per matter and store client/matter_name separately -->
+{% for(var i=0, l=data.length; i<l; i++) { %}
+    {% var matter = data[i]["file_number"] || "Unknown"; %}
+    {% var client = data[i]["client"] || "Unknown"; %}
+    {% var matter_name = data[i]["matter"] || "Unknown"; %}
+
+    {% matter_totals[matter] = (matter_totals[matter] || 0) + (parseFloat(data[i]["time"]) || 0); %}
+    {% matter_clients[matter] = client; %}
+    {% matter_names[matter] = matter_name; %}
+{% } %}
+
+<!-- Convert object to array and sort by client and file_number -->
+{% var sorted_matters = Object.keys(matter_totals).map(function(matter) { 
+    return {
+        client: matter_clients[matter],
+        total_hours: matter_totals[matter],
+        file_number: matter,
+        matter_name: matter_names[matter]
+    };
+}).sort(function(a, b) { 
+    var clientComparison = a.client.localeCompare(b.client);
+    if (clientComparison !== 0) return clientComparison;
+    return a.file_number.localeCompare(b.file_number);
+}); %}
+
+<h3>Summary by Matter</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Total Hours</th>
+            <th>File Number</th>
+            <th>Matter Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% var current_client = null; %}
+        {% var client_total = 0; %}
+
+        {% for(var i = 0; i < sorted_matters.length; i++) { %}
+            {% var row = sorted_matters[i]; %}
+
+            <!-- If new client, print a subtotal row for the previous client -->
+            {% if (current_client !== null && current_client !== row.client) { %}
+                <tr style="font-weight: bold; background-color: #f0f0f0;">
+                    <td colspan="1"></td>
+                    <td style="text-align:center;">{%= client_total.toFixed(2) %}</td>
+                    <td colspan="2">Total for {%= current_client %}</td>
+                </tr>
+                {% client_total = 0; %} <!-- Reset client total -->
+            {% } %}
+
+            <tr>
+                <td>{%= row.client %}</td>
+                <td style="text-align:center;">{%= row.total_hours.toFixed(2) %}</td>
+                <td>{%= row.file_number %}</td>
+                <td>{%= row.matter_name %}</td>
+            </tr>
+
+            {% client_total += row.total_hours; %}
+            {% current_client = row.client; %}
+        {% } %}
+
+        <!-- Print the last client's subtotal -->
+        {% if (current_client !== null) { %}
+            <tr style="font-weight: bold; background-color: #f0f0f0;">
+                <td colspan="1"></td>
+                <td style="text-align:center;">{%= client_total.toFixed(2) %}</td>
+                <td colspan="2">total for {%= current_client %}</td>
+            </tr>
+        {% } %}
+    </tbody>
+</table>
+
+</div>
+
 {% } %}
 
 {% if (filters.summary == "Lawyer Summary") { %}
