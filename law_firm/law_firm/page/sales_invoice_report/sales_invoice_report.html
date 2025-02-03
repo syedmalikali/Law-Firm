@@ -13,7 +13,9 @@
   margin-right: 10px;
   font-weight: bold;
 }
-
+.invoice-table th, .invoice-table td {
+    padding: 2px!important;
+}
 .invoice-header-table {
   margin-top: 20px;
   background-color: #f9f9f9;
@@ -21,6 +23,7 @@
 
 .invoice-details-table {
   margin-bottom: 40px;
+  padding:1px;
 }
 
 .cost-center-header {
@@ -36,6 +39,7 @@
   <!-- The container will be managed by Frappe's page loader -->
   <div class="container">
     <!-- Content will be populated by sales_invoice_report.js -->
+
   </div>
   <!-- Include the JS file -->
   <script type="text/javascript" src="/assets/your_app/js/sales_invoice_report.js"></script>

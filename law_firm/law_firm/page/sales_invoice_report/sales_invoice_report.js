@@ -68,8 +68,46 @@ frappe.pages['sales-invoice-report'].on_page_load = function(wrapper) {
 
     function render_report(data, selected_cost_center) {
         report_container.empty();
-        var grand_total = 0;
+        var report_style = $(`
+ <style>
+.report-filters {
+  margin-bottom: 20px;
+}
 
+.report-filters label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.invoice-table th, .invoice-table td {
+    padding: 2px!important;
+}
+.invoice-header-table {
+  margin-top: 20px;
+  
+}
+.invoice-heder {
+    font-weight: bold!important;
+}
+
+.invoice-details-table {
+  margin-bottom: 40px;
+  padding:1px;
+}
+.money {
+ text-align:right;
+}
+.cost-center-header {
+  margin-top: 40px;
+  background-color: #ececec;
+  padding: 10px;
+  border-left: 5px solid #007bff;
+}
+
+</style>
+`);
+        
+        var grand_total = 0;
+         report_container.append(report_style);
         data.forEach(function(group) {
             // Client-side filtering for cost center if selected
             if (selected_cost_center && group.cost_center !== selected_cost_center) {
@@ -78,42 +116,42 @@ frappe.pages['sales-invoice-report'].on_page_load = function(wrapper) {
 
             var cc_header = $('<h3 class="cost-center-header"></h3>').text('Cost Center: ' + group.cost_center);
             report_container.append(cc_header);
-
-            group.invoices.forEach(function(inv) {
-                grand_total += parseFloat(inv.total_amount) || 0;
-
-                var table = $('<table class="table table-bordered table-hover invoice-table"></table>');
+var table = $('<table class="table table-sm table-bordered table-hover invoice-table"></table>');
 
                 var thead = $('<thead class="invoice-thead"></thead>');
                 thead.append(
                     '<tr>' +
-                        '<th>Invoice Date</th>' +
-                        '<th>Customer Code</th>' +
-                        '<th>Customer Name</th>' +
-                        '<th>Cost Center</th>' +
-                        '<th>Invoice Amount</th>' +
-                        '<th>Disc</th>' +
-                        '<th>Amount After Disc</th>' +
-                        '<th>Tax</th>' +
-                        '<th>Total Amount</th>' +
+                        '<th>Date<br><small>Sno </small></th>' +
+                        '<th>Customer Code <br><small>Item Code </small> </th>' +
+                        '<th>Customer Name <br><small>Description </small> </th>' +
+                        '<th>Cost Center <br><small>Qty </small></th>' +
+                        '<th>Invoice Amount <br><small>Rate </small> </th>' +
+                        '<th>Disc <br><small>Amount </small></th>' +
+                        '<th>Amount After Disc <br><small>Disc </small></th>' +
+                        '<th>Tax <br><small>Tax </small></th>' +
+                        '<th>Total Amount <br><small>Total </small></th>' +
                     '</tr>'
                 );
                 table.append(thead);
+            group.invoices.forEach(function(inv) {
+                grand_total += parseFloat(inv.total_amount) || 0;
+
+                
 
                 var tbody = $('<tbody></tbody>');
-                var header_row = $('<tr class="invoice-header"></tr>');
+var header_row = $('<tr class="invoice-header" style=" font-weight: bold!important;"></tr>');
                 header_row.append(
                     '<td>' + inv.invoice_date + '</td>' +
                     '<td>' + inv.customer_code + '</td>' +
                     '<td>' + inv.customer_name + '</td>' +
                     '<td>' + inv.cost_center + '</td>' +
-                    '<td>' + inv.invoice_amount + '</td>' +
-                    '<td>' + inv.disc + '</td>' +
-                    '<td>' + inv.amount_after_disc + '</td>' +
-                    '<td>' + inv.tax + '</td>' +
-                    '<td>' + inv.total_amount + '</td>'
+                    '<td class="money">' + parseFloat(inv.invoice_amount).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.disc).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.amount_after_disc).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.tax).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.total_amount).toFixed(2)  + '</td>'
                 );
-                tbody.append(header_row);
+                tbody.append(header_row);                
 
                 inv.details.forEach(function(item) {
                     var detail_row = $('<tr class="detail-row"></tr>');
@@ -122,15 +160,27 @@ frappe.pages['sales-invoice-report'].on_page_load = function(wrapper) {
                         '<td>' + item.itemcode + '</td>' +
                         '<td>' + item.item_name + '</td>' +
                         '<td>' + item.qty + '</td>' +
-                        '<td>' + item.unit_price + '</td>' +
-                        '<td>' + item.amount + '</td>' +
-                        '<td>' + item.disc + '</td>' +
-                        '<td>' + item.tax_amount + '</td>' +
-                        '<td>' + item.total + '</td>'
+                        '<td class="money">' + parseFloat(item.unit_price).toFixed(2)  + '</td>' +
+                        '<td class="money">' + parseFloat(item.amount).toFixed(2)  + '</td>' +
+                        '<td class="money">' + parseFloat(item.disc).toFixed(2)  + '</td>' +
+                        '<td class="money">' + parseFloat(item.tax_amount).toFixed(2)  + '</td>' +
+                        '<td class="money">' + parseFloat(item.total).toFixed(2)  + '</td>'
                     );
                     tbody.append(detail_row);
                 });
-
+var header_row = $('<tr class="invoice-header" style=" font-weight: bold!important;"></tr>');
+                header_row.append(
+                    '<td>' + '</td>' +
+                    '<td>'  +'</td>' +
+                    '<td>' + '</td>' +
+                    '<td>' + '</td>' +
+                    '<td class="money">' + parseFloat(inv.invoice_amount).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.disc).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.amount_after_disc).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.tax).toFixed(2)  + '</td>' +
+                    '<td class="money">' + parseFloat(inv.total_amount).toFixed(2)  + '</td>'
+                );
+                tbody.append(header_row);
                 table.append(tbody);
                 report_container.append(table);
             });

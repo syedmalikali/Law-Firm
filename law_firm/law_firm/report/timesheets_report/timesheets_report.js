@@ -61,6 +61,7 @@ frappe.query_reports["Timesheets Report"] = {
             label: __("Print Option"),
             fieldtype: "Select",
             options: "All\nLawyer Summary\nDetail Only\nSummary By Matter",
+            default: "All"  
             
         },
 
