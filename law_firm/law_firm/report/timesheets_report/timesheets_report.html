@@ -11,7 +11,7 @@
     .table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 15mm;
+        margin-top: 5mm;
     }
 
     .table th, .table td {
@@ -77,7 +77,16 @@
 Detailed Time Entries</h3>
         <p>Schedule of Services Rendered To:</p>
       
-        <p><strong>Client/Matter:</strong></p>
+        <p><strong>Client/Matter: 
+{% if (filters.customer) { %}
+{%= filters.customer%}
+{% } %}
+
+{% if (filters.project) { %}
+/ {%= filters.project%}
+{% } %}
+
+</strong></p>
         <p><strong>For The Period:{%= frappe.datetime.str_to_user(filters.from) %}
 				{%= __("to") %}
 				{%= frappe.datetime.str_to_user(filters.to) %}</strong></p>
