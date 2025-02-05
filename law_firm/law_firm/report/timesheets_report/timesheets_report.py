@@ -23,6 +23,8 @@ def get_columns(filters):
         {"label": "Particulars", "fieldname": "purticulars", "fieldtype": "Data", "width": 200},
         {"label": "Invoiced", "fieldname": "is_invoiced", "fieldtype": "Data", "width": 80},
         {"label": "Lawyer Short Code", "fieldname": "lawyer_short_code", "fieldtype": "Data", "width": 80},
+        {"label": "Client Name", "fieldname": "customer_name", "fieldtype": "Data", "width": 0},
+
     ]
     return columns
 

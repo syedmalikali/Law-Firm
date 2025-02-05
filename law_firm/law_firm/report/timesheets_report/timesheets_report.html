@@ -31,6 +31,10 @@
     }
 
     @media print {
+           @page {
+                size: auto;
+                margin: 5mm !important;
+            }
         .header, .footer {
             position: fixed;
             width: 100%;
@@ -77,14 +81,10 @@
 Detailed Time Entries</h3>
         <p>Schedule of Services Rendered To:</p>
       
-        <p><strong>Client/Matter: 
-{% if (filters.customer) { %}
-{%= filters.customer%}
-{% } %}
+        <p><strong>Client/Matter: {%= filters.customer? data[0]["customer_name"] : "" %}  
+{%= filters.project?  data[0]["matter"] : "" %}
 
-{% if (filters.project) { %}
-/ {%= filters.project%}
-{% } %}
+
 
 </strong></p>
         <p><strong>For The Period:{%= frappe.datetime.str_to_user(filters.from) %}
