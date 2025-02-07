@@ -1,11 +1,6 @@
 {
- "charts": [
-  {
-   "chart_name": "Matter",
-   "label": "Matter"
-  }
- ],
- "content": "[{\"id\":\"lM3rRiYj5N\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"DtW2Y-93rB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"fLCHrcYV0G\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"pLdSNIN_-k\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Matter\",\"col\":12}},{\"id\":\"4fMdlL87eT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transactions</b></span>\",\"col\":12}},{\"id\":\"mkz4DnC0dB\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":3}},{\"id\":\"-Kt7dMMBW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":3}},{\"id\":\"C9lHf3LE5o\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts\",\"col\":3}},{\"id\":\"mzoaG9ljwW\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":3}}]",
+ "charts": [],
+ "content": "[{\"id\":\"lM3rRiYj5N\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"LH\",\"col\":12}},{\"id\":\"DtW2Y-93rB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Lawyers\",\"col\":4}},{\"id\":\"fLCHrcYV0G\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Clients\",\"col\":4}},{\"id\":\"4fMdlL87eT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transactions</b></span>\",\"col\":12}},{\"id\":\"mkz4DnC0dB\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":3}},{\"id\":\"-Kt7dMMBW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":3}},{\"id\":\"C9lHf3LE5o\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts\",\"col\":3}},{\"id\":\"mzoaG9ljwW\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":3}}]",
  "creation": "2025-01-22 14:36:48.072549",
  "custom_blocks": [
   {
@@ -125,7 +120,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Reports",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -136,6 +131,16 @@
    "label": "Timesheet",
    "link_count": 0,
    "link_to": "Timesheets Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Expense Report",
+   "link_count": 0,
+   "link_to": "LF Expense Report",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -171,7 +176,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-02-05 16:10:47.096602",
+ "modified": "2025-02-07 21:52:37.624098",
  "modified_by": "Administrator",
  "module": "Law Firm",
  "name": "Hejailan",
